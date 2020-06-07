@@ -1,15 +1,14 @@
 import pygame
-import Pygame_theColors
 import random 
 import time
 
 pygame.init()
 
-gameDisplay=pygame.display.set_mode((600,630)) #() for tuple
+gameDisplay=pygame.display.set_mode((600,630)) 
 
 pygame.display.set_caption("Tic-Tac-Toe")
 
-white=(255,255,255)#r,g,b
+white=(255,255,255)
 black=(0,0,0)
 red=(255,0,0)
 green=(0,255,0)
@@ -79,22 +78,16 @@ board()
 pygame.display.update()
 while True:
 
-    pygame.display.update()#under while loop
+    pygame.display.update()
     
-    for event in pygame.event.get():#loop through events
+    for event in pygame.event.get():
 
-        if event.type==pygame.QUIT: #event are caps
-            pygame.quit()#X out of pygame
-            quit()#exit()#quit out of shell
-##        if event.type == pygame.MOUSEMOTION:
-##            print("mouse at :",event.pos)
-##            (mousexd,mouseyd)=event.pos
-##            textAriel((mousexd,mouseyd),10,610,black,10)
-        #Left Mouse button = 1 Middle = 2 Right = 3
+        if event.type==pygame.QUIT:
+            pygame.quit()
+            quit()
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             print( "You pressed the left mouse button at",event.pos)
             (mousex,mousey)=event.pos
-##            turncount=turncount+1
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             print ("You released the left mouse button at",event.pos)
 
@@ -108,9 +101,6 @@ while True:
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 3:
             print ("You released the right mouse button at",event.pos)
 
-                
-        #if event.type==pygame.KEYDOWN:
-        #elif event.type==pygame.KEYUP:
     if turncount%2==1 and gameOver==False:
         turnDisplay="Circle's Turn"
         if 0<mousex<200 and 0<mousey<200 and box1==True:
@@ -293,7 +283,6 @@ while True:
         threewin[8]=''
         threewin[9]=''
         print('\nCircle Wins!\n')
-##        textAriel('Cicle Wins!', 520,610,black,20)
         pygame.draw.rect(gameDisplay, white, (10,605,100,100))
         textAriel('Cicle Wins!',10,610,black,20)
         cgameOver=False
@@ -310,16 +299,9 @@ while True:
         threewin[8]=''
         threewin[9]=''
         print('\nTie!\n')
-##        textAriel('Tie!', 540,610,black,20)
         pygame.draw.rect(gameDisplay, white, (10,605,100,100))
         textAriel('Tie!',10,610,black,20)        
         tiegameOver=False
     
-##           
-##    pygame.draw.rect(gameDisplay, white, (10,605,100,100))
-##    textAriel(turnDisplay,10,610,black,20)
-##    
-    
     textAriel('Tic-Tac-Toe',510,610,black,20)
     pygame.draw.line(gameDisplay, black, (0,600),(600,600))    
-    
