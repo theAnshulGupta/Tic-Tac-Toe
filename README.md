@@ -7,4 +7,4 @@ Flappy Bird with Pygame GUI. Requires Pygame to run.
 - Upon having any row, column, or diagonal of three shapes, a line is drawn through the completed row
 - Turn name and winner/tie is displayed on bottom left
 
-Made a while back, recently uploaded. And yes my image names are weird.
+Made a while back, recently uploaded.
